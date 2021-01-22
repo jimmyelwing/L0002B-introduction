@@ -12,20 +12,17 @@ namespace change_calculator.win_app
         
         private void button1_Click(object sender, EventArgs e)
         {
-            var input = priceTxtBox.Text;
-            if (!int.TryParse(input, out var price))
+            if (!PriceIsNumber(out var price))
             {
                 MessageBox.Show("Priset måste vara ett nummer.");
                 return;
             }
-            input  = amountTxtBox.Text;
 
-            if (!int.TryParse(input, out var amount))
+            if (!AmountIsNumber(out var amount))
             {
                 MessageBox.Show("Betalt måste vara ett nummer.");
                 return;
             }
-
 
             if (price > amount)
             {
@@ -41,7 +38,20 @@ namespace change_calculator.win_app
             var changeInReturn = change.CalculateChange(amountDifference);
 
             PrintChangeInReturn(changeInReturn);
+        }
 
+        private bool AmountIsNumber(out int amount)
+        {
+            var input = amountTxtBox.Text;
+            
+            return int.TryParse(input, out amount);
+        }
+
+        private bool PriceIsNumber(out int price)
+        {
+            var input = priceTxtBox.Text;
+            
+            return int.TryParse(input, out price);
         }
 
         private void PrintChangeInReturn(Change changeInReturn)
