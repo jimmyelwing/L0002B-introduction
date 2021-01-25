@@ -1,4 +1,5 @@
 ﻿using System;
+using sales_system.Domain;
 
 namespace sales_system
 {
@@ -15,12 +16,14 @@ namespace sales_system
             for (int i = 0; i < numberOfSaleAgents; i++)
             {
                 Console.WriteLine($"\nSäljare nr. {i+1}");
+                
+                var salesAgent = new SalesAgent();
                 Console.Write("Namn: ");
-                var name = Console.ReadLine();
+                salesAgent.Name = Console.ReadLine();
                 Console.Write("Personnummer: ");
-                var identityNumber = Console.ReadLine();
+                salesAgent.IdentityNumber = Console.ReadLine();
                 Console.Write("Distrikt: ");
-                var district = Console.ReadLine();
+                salesAgent.District = Console.ReadLine();
                 Console.Write("Antal sålda artiklar: ");
                 var numberOfSoldItems = Console.ReadLine();
             }
