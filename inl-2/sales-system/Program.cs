@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace sale_system
@@ -8,21 +9,15 @@ namespace sale_system
         static void Main(string[] args)
         {
             Console.WriteLine("Hej. Hur många säljare vill du registrera?");
+            var numberOfSaleAgents = Console.ReadLine();
 
-            var continuation = true; 
-            while (continuation)
+            while (!int.TryParse(numberOfSaleAgents, out int result))
             {
-                var numberOfSaleAgents = Console.ReadLine();
-
-                if (!int.TryParse(numberOfSaleAgents, out int result))
-                {
-                    Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
-                    continue;
-                }
-
-                continuation = false;
+                Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
+                numberOfSaleAgents = Console.ReadLine();
             }
-            
+
+            Console.WriteLine($"Du har angett att du vill registrera {numberOfSaleAgents} säljare.");
         }
     }
 }
