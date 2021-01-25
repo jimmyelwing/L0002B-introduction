@@ -18,6 +18,8 @@ namespace sale_system
             }
 
             Console.WriteLine($"Du har angett att du vill registrera {numberOfSaleAgents} säljare.");
+
+
         }
     }
 }
