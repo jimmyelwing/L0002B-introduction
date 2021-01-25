@@ -3,7 +3,7 @@
 
 - Lösningsförslaget skall visas i ett flödesschema, pseudokod eller annan metod för algoritmbeskrivning 
 - Skriv ett program som läser in uppgifter för ett antal säljare i en säljkår. Om en konsolapplikation, låt användaren mata in hur många säljare hen vill registrera. Det kan exempelvis se ut enligt följande: 
-    - Namn: g
+    - Namn:
     - Personnummer: 
     - Distrikt: 
     - Antal sålda artiklar: 

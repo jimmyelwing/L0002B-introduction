@@ -11,6 +11,8 @@ namespace sale_system
         {
             var app = new SalesSystemApplication();
             app.Run();
+
+            Console.ReadKey();
         }
     }
 }
