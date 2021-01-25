@@ -7,5 +7,7 @@
         public string IdentityNumber { get; set; }
 
         public string District { get; set; }
+
+        public int NumberOfSales { get; set; }
     }
 }

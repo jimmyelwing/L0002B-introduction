@@ -25,16 +25,29 @@ namespace sales_system
                 Console.Write("Distrikt: ");
                 salesAgent.District = Console.ReadLine();
                 Console.Write("Antal sålda artiklar: ");
-                var numberOfSoldItems = Console.ReadLine();
+                salesAgent.NumberOfSales = GetNumberOfSales();
             }
 
+        }
+
+        private int GetNumberOfSales()
+        {
+            var numberOfSales = Console.ReadLine();
+
+            while (!int.TryParse(numberOfSales, out _))
+            {
+                Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
+                numberOfSales = Console.ReadLine();
+            }
+
+            return Convert.ToInt32(numberOfSales);
         }
 
         private int GetNumberOfSalesAgents()
         {
             var numberOfSaleAgents = Console.ReadLine();
 
-            while (!int.TryParse(numberOfSaleAgents, out int result))
+            while (!int.TryParse(numberOfSaleAgents, out _))
             {
                 Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
                 numberOfSaleAgents = Console.ReadLine();
