@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace sales_system
 {
     public class Writer
     {
-        private StreamWriter _stream = new StreamWriter("result.txt");
+        private StreamWriter _stream = new StreamWriter("c:\\Temp\\result.txt");
 
-        public void Write(string input)
+        public void WriteToConsoleAndFile(string input)
         {
-            _stream.WriteLine(input);
-
             Console.WriteLine(input);
+            _stream.WriteLine(input);
         }
 
         public void CloseStream()
