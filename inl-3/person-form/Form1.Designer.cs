@@ -48,6 +48,7 @@
             this.sendButton.TabIndex = 0;
             this.sendButton.Text = "Skicka";
             this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
             // cancelButton
             // 
@@ -57,6 +58,7 @@
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Avbryt";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // informationLabel
             // 

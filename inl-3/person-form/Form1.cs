@@ -21,5 +21,18 @@ namespace person_form
         {
 
         }
+
+        private void sendButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            firstNameBox.Clear();
+            lastNameBox.Clear();
+            identityNumberBox.Clear();
+            resultBox.Clear();
+        }
     }
 }
