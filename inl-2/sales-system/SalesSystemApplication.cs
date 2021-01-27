@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using sales_system.Domain;
+using sales_system.Handler;
 
 namespace sales_system
 {
@@ -10,7 +11,7 @@ namespace sales_system
         public void Run()
         {
             Console.WriteLine("Hej. Hur många säljare vill du registrera?");
-            var numberOfSaleAgents = GetNumberOfSalesAgents();
+            var numberOfSaleAgents = SalesAgentHandler.GetNumberOfSalesAgents();
 
             Console.WriteLine($"Du har angett att du vill registrera {numberOfSaleAgents} säljare.");
 
@@ -62,21 +63,6 @@ namespace sales_system
                 return "4: över 199 artiklar.";
             
             return null; //default 
-        }
-
-
-
-        private int GetNumberOfSalesAgents()
-        {
-            var numberOfSaleAgents = Console.ReadLine();
-
-            while (!int.TryParse(numberOfSaleAgents, out _))
-            {
-                Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
-                numberOfSaleAgents = Console.ReadLine();
-            }
-
-            return Convert.ToInt32(numberOfSaleAgents);
         }
     }
 }

@@ -3,10 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using sales_system.Domain;
 
-namespace sales_system
+namespace sales_system.Handler
 {
     public static class SalesAgentHandler
     {
+        public static int GetNumberOfSalesAgents()
+        {
+            var numberOfSaleAgents = Console.ReadLine();
+
+            while (!int.TryParse(numberOfSaleAgents, out _))
+            {
+                Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
+                numberOfSaleAgents = Console.ReadLine();
+            }
+
+            return Convert.ToInt32(numberOfSaleAgents);
+        }
+
         public static List<SalesAgent> GetAgentsInformation(int numberOfSaleAgents)
         {
             var agents = new List<SalesAgent>();
