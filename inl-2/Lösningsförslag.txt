@@ -1,0 +1,18 @@
+Lösningsförslag.
+
+1. Användaren startar programmet. 
+2. Be användaren att ange hur många säljare hen vill registrera.
+    2.1 Verifiera att det är en siffra som angetts. Om inte, gå tillbaka till 2. 
+3. Be användaren ange Namn, Personnummer, Distrikt och Antal sålda artiklar för det antal säljare användaren skrev i 2. 
+    3.1 Programmet sparar ner dessa i en lista av säljare. 
+4. När antalet säljare som registrerats överensstämmer med det användaren angav på 2 så sorteras antal användare baserat på hur många sälj som angetts, från minsta till högst (koden använder här LINQ).
+5. Resultatet skrivs ut i konsol och till en fil. Vi skriver ut i flera steg:
+    5.1. Först skriver programmet ut de säljare som har mindre än 50 artiklar sålda. 
+        5.1.1. Programmet summerar antal säljare som hamnar i denna kategori och skriver ut kriterierna för kategorin.
+    5.2. Sedan skriver programmet ut de säljare som har mellan 50-99 artiklar sålda. Dessa summeras på sista raden.
+        5.2.1. Programmet summerar antal säljare som hamnar i denna kategori och skriver ut kriterierna för kategorin.
+    5.3. Sedan skriver programmet ut de säljare har mellan 100-199 artiklar sålda ut. Dessa summeras på sista raden.
+        5.3.1. Programmet summerar antal säljare som hamnar i denna kategori och skriver ut kriterierna för kategorin.
+    5.4. Slutligen skriver programmet ut de säljare som har över 199 artiklar sålda ut. Dessa summeras på sista raden. 
+        5.4.1. Programmet summerar antal säljare som hamnar i denna kategori och skriver ut kriterierna för kategorin.
+6. Programmet avslutas när användaren trycker på valfri tangent på tangentbordet.
