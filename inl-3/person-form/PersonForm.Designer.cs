@@ -38,6 +38,7 @@
             this.identityNumberBox = new System.Windows.Forms.TextBox();
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.firstNameBox = new System.Windows.Forms.TextBox();
+            this.clearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sendButton
@@ -52,7 +53,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(110, 219);
+            this.cancelButton.Location = new System.Drawing.Point(110, 246);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 21);
             this.cancelButton.TabIndex = 0;
@@ -110,6 +111,7 @@
             this.identityNumberBox.Name = "identityNumberBox";
             this.identityNumberBox.Size = new System.Drawing.Size(100, 23);
             this.identityNumberBox.TabIndex = 2;
+            this.identityNumberBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.identityNumberBox_KeyDown);
             // 
             // lastNameBox
             // 
@@ -117,6 +119,7 @@
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(100, 23);
             this.lastNameBox.TabIndex = 2;
+            this.lastNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lastNameBox_KeyDown);
             // 
             // firstNameBox
             // 
@@ -124,12 +127,24 @@
             this.firstNameBox.Name = "firstNameBox";
             this.firstNameBox.Size = new System.Drawing.Size(100, 23);
             this.firstNameBox.TabIndex = 2;
+            this.firstNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.firstNameBox_KeyDown);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(110, 219);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 21);
+            this.clearButton.TabIndex = 0;
+            this.clearButton.Text = "Rensa";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // PersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 284);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.firstNameBox);
             this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.identityNumberBox);
@@ -142,7 +157,7 @@
             this.Controls.Add(this.sendButton);
             this.Name = "PersonForm";
             this.Text = "PersonForm";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.PersonForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,6 +175,7 @@
         private System.Windows.Forms.TextBox identityNumberBox;
         private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox firstNameBox;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 
