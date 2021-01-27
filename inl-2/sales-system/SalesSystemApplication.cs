@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using sales_system.Domain;
 
 namespace sales_system
@@ -45,6 +43,10 @@ namespace sales_system
 
         private void PrintNumberOfSales(List<SalesAgent> sortedAgents)
         {
+            Console.Clear();
+            WriteToConsoleAndFile("Resultat");
+            WriteToConsoleAndFile("-------------------------------------------------------");
+
             Print(sortedAgents.Where(x => x.NumberOfSales < 50));
             Print(sortedAgents.Where(x=>x.NumberOfSales >= 50  && x.NumberOfSales <= 99));
             Print(sortedAgents.Where(x => x.NumberOfSales >= 100 && x.NumberOfSales <= 199));
@@ -56,14 +58,13 @@ namespace sales_system
             if (agents.ToList().Count == 0)
                 return;
 
-            Console.WriteLine();
             foreach (var salesAgent in agents)
             {
-                Console.WriteLine("{0,20}{1,20}{2,20}{3,20}", "Name", "Persnr","Distrikt","Antal");
-                Console.WriteLine($"{salesAgent.Name,20}{salesAgent.IdentityNumber,20}{salesAgent.District,20}{salesAgent.NumberOfSales,20}");
+                WriteToConsoleAndFile($"Namn: {salesAgent.Name}\nPersnr: {salesAgent.IdentityNumber}\nDistrikt: {salesAgent.District}\nAntal: {salesAgent.NumberOfSales}\n");
             }
 
-            Console.WriteLine($"{agents.ToList().Count} har nått nivå {GetSalesLevel(agents)}");
+            WriteToConsoleAndFile($"{agents.ToList().Count} har nått nivå {GetSalesLevel(agents)}\n");
+            WriteToConsoleAndFile("-------------------------------------------------------");
         }
 
         private string GetSalesLevel(IEnumerable<SalesAgent> agents)
