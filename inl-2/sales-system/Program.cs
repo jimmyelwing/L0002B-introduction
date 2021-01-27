@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using sales_system;
 
-namespace sale_system
+namespace sales_system
 {
     class Program
     {
