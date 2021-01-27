@@ -19,8 +19,7 @@ namespace person_form
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            var input = identityNumberBox.Text;
-            var identityNumber = Formatter.FormatIdentityNumber(input);
+            var identityNumber = Formatter.FormatIdentityNumber(identityNumberBox.Text);
 
             if (!Validator.IdentityNumberIsValid(identityNumber))
             {
