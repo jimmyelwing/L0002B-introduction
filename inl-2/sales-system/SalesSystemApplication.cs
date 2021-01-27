@@ -10,36 +10,19 @@ namespace sales_system
         public void Run()
         {
             Console.WriteLine("Hej. Hur många säljare vill du registrera?");
-
             var numberOfSaleAgents = GetNumberOfSalesAgents();
 
             Console.WriteLine($"Du har angett att du vill registrera {numberOfSaleAgents} säljare.");
 
-            var agents = new List<SalesAgent>();
+            var agents = SalesAgentHandler.GetAgentsInformation(numberOfSaleAgents);
 
-            for (int i = 0; i < numberOfSaleAgents; i++)
-            {
-                Console.WriteLine($"\nSäljare nr. {i + 1}");
-
-                var salesAgent = new SalesAgent();
-                Console.Write("Namn: ");
-                salesAgent.Name = Console.ReadLine();
-                Console.Write("Personnummer: ");
-                salesAgent.IdentityNumber = Console.ReadLine();
-                Console.Write("Distrikt: ");
-                salesAgent.District = Console.ReadLine();
-                Console.Write("Antal sålda artiklar: ");
-                salesAgent.NumberOfSales = GetNumberOfSales();
-
-                agents.Add(salesAgent);
-            }
-
-            var sortedAgents = SortSalesAgentsBasedOnNumberOfSales(agents);
+            var sortedAgents = SalesAgentHandler.SortSalesAgentsBasedOnNumberOfSales(agents);
 
             PrintNumberOfSales(sortedAgents);
 
             CloseStream();
         }
+
 
         private void PrintNumberOfSales(List<SalesAgent> sortedAgents)
         {
@@ -81,25 +64,7 @@ namespace sales_system
             return null; //default 
         }
 
-        private List<SalesAgent> SortSalesAgentsBasedOnNumberOfSales(List<SalesAgent> agents)
-        {
-            return agents
-                .OrderBy(x => x.NumberOfSales)
-                .ToList();
-        }
 
-        private int GetNumberOfSales()
-        {
-            var numberOfSales = Console.ReadLine();
-
-            while (!int.TryParse(numberOfSales, out _))
-            {
-                Console.WriteLine("Du har inte angett en siffra. Vänligen ange en siffra. ");
-                numberOfSales = Console.ReadLine();
-            }
-
-            return Convert.ToInt32(numberOfSales);
-        }
 
         private int GetNumberOfSalesAgents()
         {
