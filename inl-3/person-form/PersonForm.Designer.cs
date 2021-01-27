@@ -1,6 +1,6 @@
 ﻿namespace person_form
 {
-    partial class Form1
+    partial class PersonForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -125,7 +125,7 @@
             this.firstNameBox.Size = new System.Drawing.Size(100, 23);
             this.firstNameBox.TabIndex = 2;
             // 
-            // Form1
+            // PersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,8 +140,8 @@
             this.Controls.Add(this.informationLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.sendButton);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "PersonForm";
+            this.Text = "PersonForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
