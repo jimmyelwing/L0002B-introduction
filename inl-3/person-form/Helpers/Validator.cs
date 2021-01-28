@@ -50,6 +50,7 @@ namespace person_form.Helpers
 
             var controlNumber = identityNumbers
                 .Aggregate(0, (current, number) => current + number);
+
             return controlNumber;
         }
 

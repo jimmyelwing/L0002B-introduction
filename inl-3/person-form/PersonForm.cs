@@ -47,7 +47,9 @@ namespace person_form
         private void identityNumberBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
                 sendButton_Click(sender, new EventArgs());
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)

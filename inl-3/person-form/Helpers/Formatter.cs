@@ -6,10 +6,9 @@
         {
             var identityNumberWithoutSeparator = identityNumber.Replace("-", "");
 
-            if (identityNumberWithoutSeparator.Length == 12)
-                return identityNumberWithoutSeparator.Substring(2);
-
-            return identityNumberWithoutSeparator;
+            return identityNumberWithoutSeparator.Length == 12 
+                ? identityNumberWithoutSeparator.Substring(2) 
+                : identityNumberWithoutSeparator;
         }
     }
 }
